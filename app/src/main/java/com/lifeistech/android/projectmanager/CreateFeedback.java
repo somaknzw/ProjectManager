@@ -1,27 +1,21 @@
 package com.lifeistech.android.projectmanager;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.SeekBar;
-import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 import io.realm.Realm;
-import io.realm.RealmObject;
-import android.widget.SeekBar;
+
 import android.widget.Toast;
 
 public class CreateFeedback extends AppCompatActivity{
@@ -40,15 +34,15 @@ public class CreateFeedback extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fb_create);
+        setContentView(com.lifeistech.android.projectmanager.R.layout.activity_fb_create);
 
         //realmを開く
         realm = Realm.getDefaultInstance();
 
         //関連付け
-        commentEditText = (EditText)findViewById(R.id.comment);
-        titleEditText = (EditText)findViewById(R.id.text_fbtitle);
-        ratingBar = (RatingBar) findViewById(R.id.ratingbar);
+        commentEditText = (EditText)findViewById(com.lifeistech.android.projectmanager.R.id.comment);
+        titleEditText = (EditText)findViewById(com.lifeistech.android.projectmanager.R.id.text_fbtitle);
+        ratingBar = (RatingBar) findViewById(com.lifeistech.android.projectmanager.R.id.ratingbar);
         ratingBar.setNumStars(5);
 
 
@@ -68,7 +62,7 @@ public class CreateFeedback extends AppCompatActivity{
         });
 
 
-        seekBar = (SeekBar) findViewById(R.id.seekBar);
+        seekBar = (SeekBar) findViewById(com.lifeistech.android.projectmanager.R.id.seekBar);
         seekBar.setProgress(0);
         seekBar.setMax(100);
         seekBar.setOnSeekBarChangeListener(

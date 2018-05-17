@@ -3,23 +3,14 @@ package com.lifeistech.android.projectmanager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -28,11 +19,7 @@ import java.util.List;
 import java.util.Locale;
 
 import io.realm.Realm;
-import io.realm.RealmObject;
-import io.realm.RealmQuery;
 import io.realm.RealmResults;
-
-import static io.realm.log.RealmLog.clear;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(com.lifeistech.android.projectmanager.R.layout.activity_main);
 
         //realmを開く
         realm = Realm.getDefaultInstance();
-        ListView = (ListView)findViewById(R.id.listView);
+        ListView = (ListView)findViewById(com.lifeistech.android.projectmanager.R.id.listView);
 
 
 
@@ -110,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    
+
 
 
     public void setProjectList(){
@@ -119,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         RealmResults<Project> results = realm.where(Project.class).isNotNull("updateDate").findAll();
         List<Project> items = realm.copyFromRealm(results);
 
-        ProjectAdapter adapter = new ProjectAdapter(this, R.layout.project_title_layout, items);
+        ProjectAdapter adapter = new ProjectAdapter(this, com.lifeistech.android.projectmanager.R.layout.project_title_layout, items);
 
         ListView.setAdapter(adapter);
     }
@@ -161,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
         //カスタムビューの設定
         final LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
-        final View view = inflater.inflate(R.layout.dialog_1, null);
+        final View view = inflater.inflate(com.lifeistech.android.projectmanager.R.layout.dialog_1, null);
 
         //AlertDialog生成
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -175,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which){
 
 
-                titleEditText2 = (EditText) view.findViewById(R.id.titleEditText2);
+                titleEditText2 = (EditText) view.findViewById(com.lifeistech.android.projectmanager.R.id.titleEditText2);
                 String title = titleEditText2.getText().toString();
 
                 Date date = new Date();

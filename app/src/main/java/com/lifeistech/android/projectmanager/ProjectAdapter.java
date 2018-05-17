@@ -26,11 +26,11 @@ public class ProjectAdapter extends ArrayAdapter<Project> {
         Project detail = getItem(position);
 
         if (convertView == null) {
-            convertView = layoutinflater.inflate(R.layout.project_title_layout, null);
+            convertView = layoutinflater.inflate(com.lifeistech.android.projectmanager.R.layout.project_title_layout, null);
         }
 
-        TextView titleText = (TextView) convertView.findViewById(R.id.commentText);
-        ProgressBar progressbar = (ProgressBar) convertView.findViewById(R.id.progressBar2);
+        TextView titleText = (TextView) convertView.findViewById(com.lifeistech.android.projectmanager.R.id.commentText);
+        ProgressBar progressbar = (ProgressBar) convertView.findViewById(com.lifeistech.android.projectmanager.R.id.progressBar2);
 
         titleText.setText(detail.title);
 

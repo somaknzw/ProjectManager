@@ -3,8 +3,6 @@ package com.lifeistech.android.projectmanager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import io.realm.Realm;
@@ -19,14 +17,14 @@ public class DetailofFeedBackActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detailfeedback);
+        setContentView(com.lifeistech.android.projectmanager.R.layout.activity_detailfeedback);
 
         //realmを開く
         realm = realm.getDefaultInstance();
 
-        text_fbtitle = (TextView) findViewById(R.id.text_fbtitle);
-        text_fbcommnet = (TextView) findViewById(R.id.text_fbcmment);
-        text_satisfaction = (TextView)findViewById(R.id.text_stf);
+        text_fbtitle = (TextView) findViewById(com.lifeistech.android.projectmanager.R.id.text_fbtitle);
+        text_fbcommnet = (TextView) findViewById(com.lifeistech.android.projectmanager.R.id.text_fbcmment);
+        text_satisfaction = (TextView)findViewById(com.lifeistech.android.projectmanager.R.id.text_stf);
         showData();
 
 

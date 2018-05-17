@@ -24,12 +24,12 @@ public class FeedbackAdapter extends ArrayAdapter<Project> {
         Project detail = getItem(position);
 
         if (convertView == null) {
-            convertView = layoutinflater.inflate(R.layout.project_layout, null);
+            convertView = layoutinflater.inflate(com.lifeistech.android.projectmanager.R.layout.project_layout, null);
         }
 
-        TextView dateText = (TextView)convertView.findViewById(R.id.date);
-        TextView fb_titleText = (TextView) convertView.findViewById(R.id.fb_titleText);
-        RatingBar satisfaction = (RatingBar) convertView.findViewById(R.id.satisfaction);
+        TextView dateText = (TextView)convertView.findViewById(com.lifeistech.android.projectmanager.R.id.date);
+        TextView fb_titleText = (TextView) convertView.findViewById(com.lifeistech.android.projectmanager.R.id.fb_titleText);
+        RatingBar satisfaction = (RatingBar) convertView.findViewById(com.lifeistech.android.projectmanager.R.id.satisfaction);
         satisfaction.setNumStars(5);
 
         dateText.setText(detail.logdate);

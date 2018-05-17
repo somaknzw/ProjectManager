@@ -1,19 +1,14 @@
 package com.lifeistech.android.projectmanager;
 
-import android.app.ActionBar;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -24,7 +19,6 @@ import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
-import io.realm.Sort;
 
 public class FeedbackList extends AppCompatActivity {
 
@@ -43,13 +37,13 @@ public class FeedbackList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feedbackview);
+        setContentView(com.lifeistech.android.projectmanager.R.layout.activity_feedbackview);
 
         realm = Realm.getDefaultInstance();
 
-        feed_back_list = (ListView)findViewById(R.id.listView2);
-        progressBar = (ProgressBar)findViewById(R.id.progressBar);
-        text = (TextView)findViewById(R.id.textView2);
+        feed_back_list = (ListView)findViewById(com.lifeistech.android.projectmanager.R.id.listView2);
+        progressBar = (ProgressBar)findViewById(com.lifeistech.android.projectmanager.R.id.progressBar);
+        text = (TextView)findViewById(com.lifeistech.android.projectmanager.R.id.textView2);
 
         ViewCompat.setNestedScrollingEnabled(feed_back_list, true);
 
@@ -129,7 +123,7 @@ public class FeedbackList extends AppCompatActivity {
         updateDate = intent.getStringExtra("updateDate");
 
         Collections.reverse(items);
-        FeedbackAdapter adapter = new FeedbackAdapter(this, R.layout.project_layout, items);
+        FeedbackAdapter adapter = new FeedbackAdapter(this, com.lifeistech.android.projectmanager.R.layout.project_layout, items);
 
         feed_back_list.setAdapter(adapter);
 
