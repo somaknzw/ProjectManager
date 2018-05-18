@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lifeistech.android.projectmanager">
+    package="com.kyana.projectmanager">
 
     <application
         android:name=".ProjectManager"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_first"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity android:name="com.kyana.projectmanager.MainActivity"
             android:label="プロジェクト">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +19,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FeedbackList"
+            android:name="com.kyana.projectmanager.FeedbackList"
             android:label="フィードバック一覧" />
         <activity
-            android:name=".CreateFeedback"
+            android:name="com.kyana.projectmanager.CreateFeedback"
             android:label="フィードバックを記入" />
-        <activity android:name=".DetailofFeedBackActivity">
+        <activity android:name="com.kyana.projectmanager.DetailofFeedBackActivity">
         </activity>
     </application>
 
